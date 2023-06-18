@@ -4,17 +4,17 @@ const RootQueryType = new GraphQLObjectType({
     name: "Query",
     description: "Root Query",
     fields: () => ({
-        getMessages: {
+        loadMessagesTarik: {
             type: new GraphQLObjectType({
-                name: "Messages",
-                description: "Messages",
+                name: "Tests",
+                description: "Tests",
                 fields: () => ({
-                    message: { type: GraphQLString }
+                    messageTarik: { type: GraphQLString }
                 })
             }),
             description: "Send mail. ",
             resolve: async (_parent, args, _context, _info) => {
-                res = { message: 'You dont have any unread message.' };
+                res = { messageTarik: 'You dont have any unread messageTarik.' };
                 return res;
             }
         },

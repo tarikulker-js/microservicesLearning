@@ -4,20 +4,20 @@ const RootMutationType = new GraphQLObjectType({
     name: "Mutation",
     description: "Root Mutation",
     fields: () => ({
-        sendMessage: {
+        sendMessageTarikMutation: {
             type: new GraphQLObjectType({
-                name: "Message",
-                description: "Message",
+                name: "MessageTarikMutation",
+                description: "MessageTarikMutation",
                 fields: () => ({
-                    message: { type: GraphQLString },
+                    messageTarikMutation: { type: GraphQLString },
                 })
             }),
-            description: "Send Message. ",
+            description: "Send MessageTarikMutation. ",
             args: {
                 user: { type: new GraphQLNonNull(GraphQLString) }
             },
             resolve: async (_parent, args, _context, _info) => {
-                res = { message: 'Welcome ' + args.user };
+                res = { messageTarikMutation: 'Welcome ' + args.user };
                 return res;
             }
         },
