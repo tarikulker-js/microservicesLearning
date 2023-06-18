@@ -1,0 +1,18 @@
+version: '3'
+services:
+  auth_service:
+    build:
+      context: .
+      dockerfile: services/auth/Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - ./services/auth:/app/services/auth
+  post_service:
+    build:
+      context: .
+      dockerfile: services/post/Dockerfile
+    ports:
+      - 3002:3002
+    volumes:
+      - ./services/post:/app/services/post
